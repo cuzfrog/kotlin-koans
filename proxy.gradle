@@ -1,0 +1,18 @@
+apply plugin: 'idea'
+
+task setHttpProxy {
+    def ip = "192.168.1.6"
+    def port = "1080"
+    System.setProperty("http.proxyHost", ip)
+    System.setProperty("http.proxyPort", port)
+    System.setProperty("https.proxyHost", ip)
+    System.setProperty("https.proxyPort", port)
+}
+build.dependsOn setHttpProxy
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}

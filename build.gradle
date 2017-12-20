@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.1.4'
+    ext.kotlin_version = '1.2.10'
 
     repositories {
         mavenCentral()
@@ -11,6 +11,7 @@ buildscript {
 }
 
 apply plugin: 'kotlin'
+apply from: 'proxy.gradle'
 
 sourceSets {
     main.java.srcDirs += 'src'
@@ -23,6 +24,6 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile 'com.google.guava:guava:16.0'
+    compile 'com.google.guava:guava:23.5-jre'
     testCompile 'junit:junit:4.12'
 }
