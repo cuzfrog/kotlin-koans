@@ -11,8 +11,8 @@ class Sum(val left: Expr, val right: Expr) : Expr()
 
 fun eval(e: Expr): Int =
         when (e) {
-            is Num -> todoTask8(e)
-            is Sum -> todoTask8(e)
+            is Num -> e.value
+            is Sum -> eval(e.left) + eval(e.right)
         }
 
 fun todoTask8(expr: Expr): Nothing = TODO(
@@ -22,5 +22,5 @@ fun todoTask8(expr: Expr): Nothing = TODO(
         The 'JavaCode8.eval' method provides the similar functionality written in Java.
     """,
     documentation = doc8(),
-    references = { JavaCode8().eval(expr) })
+        references = *arrayOf({ JavaCode8().eval(expr) }))
 
