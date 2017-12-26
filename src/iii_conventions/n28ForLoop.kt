@@ -29,12 +29,11 @@ fun todoTask28(): Nothing = TODO(
         Use the utility function 'MyDate.nextDay()'.
     """,
     documentation = doc28(),
-    references = { date: MyDate -> DateRange(date, date.nextDay()) })
+        references = *arrayOf({ date: MyDate -> DateRange(date, date.nextDay()) }))
 
 
 fun iterateOverDateRange(firstDate: MyDate, secondDate: MyDate, handler: (MyDate) -> Unit) {
-    todoTask28()
-//    for (date in firstDate..secondDate) {
-//        handler(date)
-//    }
+    for (date in firstDate..secondDate) {
+        handler(date)
+    }
 }
