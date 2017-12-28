@@ -27,3 +27,9 @@ dependencies {
     compile 'com.google.guava:guava:23.5-jre'
     testCompile 'junit:junit:4.12'
 }
+
+
+task runDemoInV(type: JavaExec) {
+    main = 'v_builders.demo.BuilderDemo'
+    classpath = sourceSets.main.runtimeClasspath
+}

@@ -1,3 +1,5 @@
+@file:JvmName("BuilderDemo")
+
 package v_builders.demo
 
 import v_builders.renderProductTable
